@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OOD Session Timer
+Comment=Adds a walltime countdown to the Xfce panel for OOD desktop sessions
+Exec=/opt/ood-session-timer/bin/ood-add-timer.sh
+OnlyShowIn=XFCE;
+X-XFCE-Autostart-Override=true
+Terminal=false
+NoDisplay=true
