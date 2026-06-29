@@ -16,8 +16,7 @@ interactive desktop.
 - Shows the absolute session end time in the panel item's tooltip.
 - Sends `notify-send` popups at configurable thresholds (default: 30, 10, 5,
   and 1 minute remaining).
-- Reflects whatever walltime the user actually requested — including sessions
-  shorter than your site cap — because it reads the job's real end time from the
+- Reflects whatever walltime the user actually requested because it reads the job's real end time from the
   scheduler.
 
 The countdown updates every 30 seconds by default (configurable). It is
@@ -57,7 +56,7 @@ reconnect.
 ### Scheduler load
 
 The producer contacts `slurmctld` exactly once per session (first render), then
-reads a cached epoch. A hundred concurrent desktops will not add meaningful
+reads a cached epoch. A large number of concurrent desktops will not add meaningful
 controller load.
 
 ## Requirements
