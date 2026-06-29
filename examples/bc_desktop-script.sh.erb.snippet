@@ -1,0 +1,14 @@
+# bc_desktop-script.sh.erb.snippet
+#
+# Add this line to your OnDemand bc_desktop app's template/script.sh.erb,
+# BEFORE the desktop environment launches.
+#
+# It is ONLY needed if $SLURM_JOB_ID is not already visible inside the Xfce
+# session (see README, installation step 4). Some xstartup wrappers launch the
+# window manager via a clean login shell that drops the job environment; this
+# writes the id to a file the timer scripts read as a fallback.
+#
+# Verify first: launch a desktop, open a terminal in it, run `echo $SLURM_JOB_ID`.
+# If it prints the id, you do NOT need this snippet.
+
+echo "$SLURM_JOB_ID" > "$HOME/.ood-session-job"
