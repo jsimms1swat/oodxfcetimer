@@ -76,6 +76,31 @@ controller load.
 
 ## Installation
 
+### Quick install
+
+On the compute-node image, run the bundled installer as root:
+
+```bash
+sudo ./install.sh
+```
+
+It performs all of the steps below: installs the packages, places the scripts
+in `/opt/ood-session-timer/bin/`, and installs the autostart entry. Useful
+options:
+
+- `--bindir DIR` — install the scripts somewhere other than the default; the
+  injector's `PRODUCER` path and the `.desktop` `Exec=` line are rewritten to
+  match.
+- `--skip-packages` — install files only, if your image pipeline manages RPMs
+  separately.
+- `--uninstall` — remove the installed files.
+
+You still need to confirm the job environment reaches the session (step 4) and
+verify the panel id (step 5). The remaining steps document what the installer
+does, for manual installs or troubleshooting.
+
+### Longer install
+
 All steps target the **compute-node image**.
 
 1. **Install the scripts.**
